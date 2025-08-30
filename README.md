@@ -1,2 +1,5 @@
 # Team_Recipe_Project
-Made by Aisha Maneesha, Karuna, Khushi
+Group Project
+Authors: Aisha
+         Karuna
+         Khushi
