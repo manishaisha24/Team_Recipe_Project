@@ -7,7 +7,6 @@ async function addRecipe() {
   let calories = document.getElementById("calories").value;
 
   if (name && ingredients && calories) {
-    // API call to get recipe image
     let image = await fetchImageFromAPI(name);
 
     let recipe = { name, ingredients, calories, image };
@@ -25,11 +24,11 @@ async function fetchImageFromAPI(name) {
     if (data.meals && data.meals.length > 0) {
       return data.meals[0].strMealThumb;
     } else {
-      return "https://via.placeholder.com/100"; 
+      return "https://via.placeholder.com/100";
     }
   } catch (error) {
     console.error("Error fetching image:", error);
-    return "https://via.placeholder.com/100"; 
+    return "https://via.placeholder.com/100";
   }
 }
 

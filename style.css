@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #ffd6e0, #ffe4c4, #e0f7fa, #cce7ff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    animation: bgSlide 60s infinite;
+}
+
+@keyframes bgSlide {
+    0% {
+        background-image: url('https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg');
+    }
+
+    20% {
+        background-image: url('https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg');
+    }
+
+    40% {
+        background-image: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg');
+    }
+
+    60% {
+        background-image: url('https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg');
+    }
+
+    80% {
+        background-image: url('https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg');
+    }
+
+    100% {
+        background-image: url('https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg');
+    }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0 20px;
+    gap: 15px;
+    animation: fadeDown 1.2s ease forwards;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6f61, #ff9472);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    animation: float 5s infinite ease-in-out, rotate 12s linear infinite;
+    color: white;
+}
+
+.logo::after {
+    content: "🍵";
+}
+
+.app-name {
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #ff6f61, #ff9472);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
+}
+
+.container {
+    text-align: center;
+    padding: 40px 30px;
+    max-width: 600px;
+    margin: 20px auto 50px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 111, 97, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+}
+
+.container::before {
+    width: 200px;
+    height: 200px;
+    background: #ff6f61;
+    top: -50px;
+    left: -50px;
+    animation: floatCircle 6s ease-in-out infinite alternate;
+}
+
+.container::after {
+    width: 150px;
+    height: 150px;
+    background: #ff9472;
+    bottom: -40px;
+    right: -40px;
+    animation: floatCircle 8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatCircle {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-20px) rotate(45deg);
+    }
+}
+
+input {
+    width: calc(100% - 40px);
+    margin: 12px 0;
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 111, 97, 0.6);
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 6px 15px rgba(255, 111, 97, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+input::placeholder {
+    color: #ff6f61;
+    font-weight: 400;
+    font-style: italic;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff9472;
+    box-shadow: 0 0 12px rgba(255, 111, 97, 0.4);
+    transform: scale(1.02);
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff6f61, #ff9472);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(255, 111, 97, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(255, 111, 97, 0.5);
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    margin: 10px 0;
+    padding: 18px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+li img {
+    border-radius: 15px;
+    margin-right: 18px;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+#data {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border-radius: 15px;
+    font-size: 18px;
+    margin-top: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-8px)
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #333;
+    text-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
+}
+
+li b,
+.card h3 {
+    color: #222;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.3);
+}
